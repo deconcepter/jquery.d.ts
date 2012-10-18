@@ -80,6 +80,7 @@ interface JQueryDeferred extends JQueryPromise {
     notify(...args: any[]): JQueryDeferred;
     notifyWith(context: any, ...args: any[]): JQueryDeferred;
 
+    promise(target?: any): JQueryPromise;
     pipe(doneFilter?: any, failFilter?: any, progressFilter?: any): JQueryPromise;
     progress(...progressCallbacks: any[]): JQueryDeferred;
     reject(...args: any[]): JQueryDeferred;
@@ -189,7 +190,7 @@ interface JQueryStatic {
     noConflict(removeAll?: bool): Object;
 
     when(...deferreds: any[]): JQueryPromise;
-
+    Deferred(target?:any): JQueryDeferred;
     /***
      CSS
     ****/
@@ -201,6 +202,7 @@ interface JQueryStatic {
      DATA
     *****/
     data(element: Element, key: string, value: any): Object;
+
 
     dequeue(element: Element, queueName?: string): any;
 
